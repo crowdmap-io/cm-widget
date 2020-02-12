@@ -1,0 +1,71 @@
+/*doc
+---
+title: Liste des couleurs
+name: 01_primaryColors
+category: Helpers
+---
+
+Pour utiliser une couleur sur un élément, vous pouvez utiliser [le helper color][hColor].
+
+`color:color($color-dark,'primary');`
+
+<div class="row">
+    <div class="swatchColor">
+      <div class="docSwatch colorDark"></div>
+      <div class="nameColor">$color-dark</div>
+    </div>
+
+    <div class="swatchColor">
+      <div class="docSwatch colorLight"></div>
+      <div class="nameColor">$color-light</div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="swatchColor">
+      <div class="docSwatch colorPrimary"></div>
+      <div class="nameColor">$color-primary</div>
+    </div>
+
+    <div class="swatchColor">
+      <div class="docSwatch colorHighlight"></div>
+      <div class="nameColor">$color-highlight</div>
+    </div>
+
+     <div class="swatchColor">
+      <div class="docSwatch colorDanger"></div>
+      <div class="nameColor">$color-danger</div>
+    </div>
+
+    <div class="swatchColor">
+      <div class="docSwatch colorSuccess"></div>
+      <div class="nameColor">$color-succes</div>
+    </div>
+</div>
+
+*/
+
+.colorPrimary {
+    background: color($color-primary,'primary');
+}
+
+.colorDanger {
+    background:color($color-danger,'primary');
+}
+
+.colorSuccess {
+    background:color($color-success,'primary');
+}
+
+.colorHighlight {
+    background:color($color-highlight,'primary');
+}
+
+.colorDark {
+    background:color($color-dark,'primary');
+}
+
+.colorLight {
+    background:color($color-light,'primary');
+}

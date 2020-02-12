@@ -1,0 +1,705 @@
+@charset "UTF-8";
+/*doc
+---
+title: Couleur
+name: hColor
+category: Helpers
+---
+
+Utilisation du helper pour insérer une couleur sur un élément.
+
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>
+      color:color($color-dark,'00');
+    </pre>
+  </div>
+</div>
+
+*/
+/*doc
+---
+title: When inside
+name: whenInside
+category: Helpers
+---
+
+Le helper when-inside permet de définir un style pour élément lorsqu'il se trouve dans une autre classe.
+
+<div class="codeBlock">
+<div class="highlight">
+<pre>
+.paragraph {
+    font-size:12px;
+}
+
+@include when-inside('.navbar') {
+    .paragraph {
+        font-size:10px;
+    }
+}
+</pre>
+</div>
+</div>
+
+
+*/
+@font-face {
+  font-family: "ABeeZee";
+  src: url("../assets/fonts/ABeeZee/ABeeZee-Italic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic; }
+@font-face {
+  font-family: "ABeeZee";
+  src: url("../assets/fonts/ABeeZee/ABeeZee-Regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: "OpenSans";
+  src: url("../assets/fonts/OpenSans/OpenSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal; }
+@font-face {
+  font-family: "OpenSans";
+  src: url("../assets/fonts/OpenSans/OpenSans-Regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: "JosefinSans";
+  src: url("../assets/fonts/Josefin_Sans/JosefinSans-Regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+/*doc
+---
+title: Margin
+name: margin
+category: Utilities
+---
+
+Structure : m*position*-*size*
+
+Position :
+t (top)
+b (bottom)
+r (right)
+l (left)
+
+Size :
+xs
+sm
+md
+lg
+
+```html_example
+<div class="mt-lg">Texte bold</div>
+<div class="mb-lg ml-lg">Texte normal</div>
+
+```
+
+*/
+/*doc
+---
+title: Padding
+name: padding
+category: Utilities
+---
+
+Structure : p*position*-*size*
+
+Position :
+t (top)
+b (bottom)
+r (right)
+l (left)
+
+Size :
+xs
+sm
+md
+lg
+
+```html_example
+<div class="pb-lg">Texte bold</div>
+<div class="pb-lg pl-lg">Texte normal</div>
+```
+
+*/
+.ml-xs {
+  margin-left: 2px !important; }
+
+.pl-xs {
+  padding-left: 2px !important; }
+
+.ml-sm {
+  margin-left: 4px !important; }
+
+.pl-sm {
+  padding-left: 4px !important; }
+
+.ml-md {
+  margin-left: 8px !important; }
+
+.pl-md {
+  padding-left: 8px !important; }
+
+.ml-lg {
+  margin-left: 16px !important; }
+
+.pl-lg {
+  padding-left: 16px !important; }
+
+.ml-xl {
+  margin-left: 24px !important; }
+
+.pl-xl {
+  padding-left: 24px !important; }
+
+.mr-xs {
+  margin-right: 2px !important; }
+
+.pr-xs {
+  padding-right: 2px !important; }
+
+.mr-sm {
+  margin-right: 4px !important; }
+
+.pr-sm {
+  padding-right: 4px !important; }
+
+.mr-md {
+  margin-right: 8px !important; }
+
+.pr-md {
+  padding-right: 8px !important; }
+
+.mr-lg {
+  margin-right: 16px !important; }
+
+.pr-lg {
+  padding-right: 16px !important; }
+
+.mr-xl {
+  margin-right: 24px !important; }
+
+.pr-xl {
+  padding-right: 24px !important; }
+
+.mb-xs {
+  margin-bottom: 2px !important; }
+
+.pb-xs {
+  padding-bottom: 2px !important; }
+
+.mb-sm {
+  margin-bottom: 4px !important; }
+
+.pb-sm {
+  padding-bottom: 4px !important; }
+
+.mb-md {
+  margin-bottom: 8px !important; }
+
+.pb-md {
+  padding-bottom: 8px !important; }
+
+.mb-lg {
+  margin-bottom: 16px !important; }
+
+.pb-lg {
+  padding-bottom: 16px !important; }
+
+.mb-xl {
+  margin-bottom: 24px !important; }
+
+.pb-xl {
+  padding-bottom: 24px !important; }
+
+.mt-xs {
+  margin-top: 2px !important; }
+
+.pt-xs {
+  padding-top: 2px !important; }
+
+.mt-sm {
+  margin-top: 4px !important; }
+
+.pt-sm {
+  padding-top: 4px !important; }
+
+.mt-md {
+  margin-top: 8px !important; }
+
+.pt-md {
+  padding-top: 8px !important; }
+
+.mt-lg {
+  margin-top: 16px !important; }
+
+.pt-lg {
+  padding-top: 16px !important; }
+
+.mt-xl {
+  margin-top: 24px !important; }
+
+.pt-xl {
+  padding-top: 24px !important; }
+
+.p-lg {
+  padding: 16px !important; }
+
+.p-md {
+  padding: 8px !important; }
+
+.p-sm {
+  padding: 4px !important; }
+
+.p-xs {
+  padding: 2px !important; }
+
+.mt-auto {
+  margin-top: auto !important; }
+
+.ml-auto {
+  margin-left: auto !important; }
+
+.mr-auto {
+  margin-right: auto !important; }
+
+/*doc
+---
+title: Z-Index
+name: zIndex
+category: Helpers
+---
+
+Ce helper permet de récupérer le z-index correspondant à un composant. La gestion des z-index est donc facilitée
+puisqu'elle est centralisée dans un tableau.
+
+
+<div class="codeBlock">
+<div class="highlight">
+<pre>
+z-index:z('modal');
+</pre>
+</div>
+</div>
+
+
+Z Index disponible :
+
+z-index           | Value
+----------------  | -----------------
+modal             | 5000
+dropdown          | 4000
+navbar            | 3
+default           | 1
+below             | -1
+
+*/
+/*doc
+---
+title: Text
+name: text
+category: Utilities
+---
+
+```html_example
+<p class="u-font--light">Texte light</p>
+<p class="u-font--normal">Texte normal</p>
+<p class="u-font--bold">Texte en gras</p>
+<p class="u-font--uppercase">Texte majuscule</p>
+<p class="u-truncate-text">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur at atque illo numquam perspiciatis possimus sequi soluta tempore voluptatem! Aliquam debitis dolores, doloribus excepturi harum officia pariatur totam veritatis?
+</p>
+```
+
+```html_example
+<p class="u-font--xs">Texte extra small</p>
+<p class="u-font--sm">Texte small</p>
+<p class="u-font--md">Texte normal</p>
+<p class="u-font--lg">Texte large</p>
+<p class="u-font--xl">Texte extra large</p>
+```
+
+*/
+.u-color--primary {
+  color: #072236; }
+  .u-color--primary-light {
+    color: #D8D8D8; }
+.u-color--highlight {
+  color: #22ADF5; }
+  .u-color--highlight-light {
+    color: rgba(34, 173, 245, 0.5); }
+.u-color--success {
+  color: #10CFBD; }
+
+.u-font--light {
+  font-weight: 300; }
+.u-font--normal {
+  font-weight: 500; }
+.u-font--bold {
+  font-weight: 700; }
+.u-font--uppercase {
+  text-transform: uppercase !important; }
+.u-font--xs {
+  font-size: 0.8em !important; }
+.u-font--sm {
+  font-size: 10.8px !important; }
+.u-font--md {
+  font-size: 12px !important; }
+.u-font--lg {
+  font-size: 14px !important; }
+.u-font--xl {
+  font-size: 16px !important; }
+
+.u-truncate-text {
+  width: 100%;
+  @util truncate; }
+
+/*doc
+---
+title: Text Alignment
+name: textAlignment
+category: Utilities
+---
+
+```html_example
+<div class="u-text-left">Text aligné gauche</div>
+<div class="u-text-right">Text aligné droite</div>
+```
+
+*/
+.u-text-left {
+  text-align: left !important; }
+
+.u-text-right {
+  text-align: right !important; }
+
+.u-text-center {
+  text-align: center !important; }
+
+.wid-indy-w-container {
+  font-family: "ABeeZee", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica;
+  font-size: 12px;
+  background: #072236;
+  padding: 16px;
+  color: #ffffff;
+  border-radius: 2px;
+  max-width: 390px;
+  min-height: 260px;
+  width: 80vw;
+  z-index: 9999;
+  box-shadow: 0 0 5px 0 rgba(7, 34, 54, 0.4); }
+  .wid-indy-w-container--light {
+    background: #ffffff;
+    color: #072236;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); }
+  .wid-indy-w-container * {
+    box-sizing: border-box; }
+  .wid-indy-w-container textarea {
+    min-height: 70px !important;
+    line-height: 1.8 !important; }
+  .wid-indy-w-container .wid-indy-form-group {
+    margin-bottom: 8px; }
+  .wid-indy-w-container .is-shown {
+    display: inline-block; }
+  .wid-indy-w-container .indy-detail {
+    font-size: .85em;
+    color: #a5a4a1;
+    margin-top: 2px; }
+  .wid-indy-w-container .wid-indy-input {
+    font-family: "ABeeZee", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica;
+    display: block;
+    height: 35px;
+    font-size: 12px;
+    padding: 4px 8px;
+    width: 100%;
+    background-color: #EDF5FB;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 12px !important;
+    box-shadow: none;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s; }
+    .wid-indy-w-container .wid-indy-input:hover {
+      outline: 0;
+      box-shadow: 0 0 0 3px rgba(165, 164, 161, 0.1);
+      border-color: #A5A4A1;
+      transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; }
+    .wid-indy-w-container .wid-indy-input:focus {
+      outline: 0;
+      box-shadow: 0 0 0 3px rgba(34, 173, 245, 0.1);
+      border-color: #22ADF5;
+      transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; }
+    .wid-indy-w-container .wid-indy-input--error {
+      background: #FFF1F2;
+      border-color: #f1404b !important; }
+  .wid-indy-w-container .wid-indy-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: calc(100% - 42px);
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0px, 10px);
+    transition: all .3s ease; }
+  .wid-indy-w-container .is-hide {
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s ease;
+    display: none; }
+
+.wid-indy-w-container {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+  position: fixed;
+  right: 10px;
+  bottom: 0;
+  transform: translate(0px, 0px); }
+  .wid-indy-w-container--open {
+    transform: translate(0px, -10px);
+    visibility: visible;
+    opacity: 1;
+    transition: all .3s ease; }
+
+.wid-indy-button {
+  background: none;
+  font-family: "ABeeZee", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica;
+  font-size: 10.8px;
+  color: #ffffff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  text-transform: uppercase;
+  padding: 8px 8px;
+  font-weight: 700;
+  border: none;
+  z-index: 999;
+  transition: background .2s ease-in-out;
+  box-shadow: 0 0 6px 0 rgba(57, 81, 255, 0.3);
+  text-decoration: none; }
+  .wid-indy-button:hover {
+    cursor: pointer;
+    transition: background .2s ease-in-out; }
+  .wid-indy-button--small {
+    padding: 8px 16px;
+    font-size: 10.8px; }
+  .wid-indy-button--primary {
+    background: #36558F; }
+    .wid-indy-button--primary:hover {
+      background: #283f6a; }
+  .wid-indy-button--success {
+    background: #FF4A95; }
+    .wid-indy-button--success:hover {
+      background: #ff3b8c; }
+  .wid-indy-button--feedback--bottom {
+    height: 36px;
+    bottom: 0; }
+  .wid-indy-button--feedback--right {
+    right: 8px; }
+  .wid-indy-button--feedback--aside--right {
+    right: 0; }
+  .wid-indy-button--feedback:hover {
+    cursor: pointer; }
+  .wid-indy-button--feedback--aside-right {
+    transform: rotate(-90deg);
+    right: 0; }
+  .wid-indy-button--feedback--aside {
+    min-height: 115px;
+    min-width: 0 !important;
+    width: 35px;
+    bottom: 30%; }
+  .wid-indy-button--feedback_container {
+    position: fixed;
+    background: #072236;
+    overflow: hidden;
+    padding: 8px;
+    bottom: 8px;
+    right: 8px;
+    border-radius: 2px;
+    text-align: center; }
+    .wid-indy-button--feedback_container:hover .wid-indy-button--feedback_background {
+      background: #010609; }
+  .wid-indy-button--feedback_background {
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    background: #072236;
+    width: 100%;
+    transform: skewX(-8deg);
+    right: -8px;
+    border-radius: 2px; }
+  .wid-indy-button--feedback_content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    background: none;
+    font-family: "OpenSans", "ABeeZee", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica;
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff; }
+
+.sending {
+  opacity: .5; }
+
+.wid-indy-btn-group {
+  display: flex;
+  background: #0A2C45;
+  border: 1px solid #ffffff;
+  border-radius: 12px; }
+  .wid-indy-w-container--light .wid-indy-btn-group {
+    background: #EFECEC;
+    border-color: #E3E3E3; }
+  .wid-indy-btn-group--error {
+    border-color: #f1404b !important; }
+  .wid-indy-btn-group-item {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 4px;
+    opacity: 1;
+    transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+    background: #FFFFFF; }
+    .wid-indy-btn-group-item:first-child {
+      border-radius: 10px 0 0 10px; }
+    .wid-indy-btn-group-item:last-child {
+      border-radius: 0 10px 10px 0; }
+    .wid-indy-btn-group-item-legend {
+      font-size: 9px;
+      font-style: italic;
+      color: #5A5A5A;
+      margin-top: 2px; }
+    .wid-indy-btn-group-item .emo-background {
+      fill: #FFD483; }
+    .wid-indy-btn-group-item:not(:last-child) {
+      border-right: 1px solid #ffffff; }
+      .wid-indy-w-container--light .wid-indy-btn-group-item:not(:last-child) {
+        border-color: #E3E3E3; }
+    .wid-indy-btn-group-item:hover {
+      transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+      cursor: pointer;
+      opacity: 1; }
+    .wid-indy-btn-group-item--inactive {
+      opacity: .8;
+      background: transparent;
+      transition: opacity .2s ease-in-out, transform .2s ease-in-out; }
+      .wid-indy-btn-group-item--inactive .wid-indy-btn-group-item-legend {
+        color: #EDF5FB; }
+        .wid-indy-w-container--light .wid-indy-btn-group-item--inactive .wid-indy-btn-group-item-legend {
+          color: #5A5A5A; }
+      .wid-indy-btn-group-item--inactive .emo-background {
+        fill: #B8CFE2; }
+        .wid-indy-w-container--light .wid-indy-btn-group-item--inactive .emo-background {
+          fill: #FAF7F7; }
+
+.wid-indy-w-powered {
+  display: flex;
+  justify-content: center;
+  font-size: 10.8px;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-family: "OpenSans", "ABeeZee", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica;
+  margin-top: 8px; }
+  .wid-indy-w-powered-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "JosefinSans", "ABeeZee", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica;
+    display: flex;
+    align-items: center; }
+    .wid-indy-w-container--light .wid-indy-w-powered-link {
+      color: #072236; }
+.wid-indy-w-footer {
+  display: flex;
+  justify-content: space-between; }
+
+.wid-indy-label {
+  font-weight: 700;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  margin-bottom: 4px; }
+  .wid-indy-label--light {
+    color: #ffffff; }
+    .wid-indy-w-container--light .wid-indy-label--light {
+      color: #072236; }
+  .wid-indy-label--success {
+    color: #10CFBD; }
+  .wid-indy-label-note {
+    display: none; }
+
+:root {
+  --width-btn-container: 80px;
+  --label-top-position: 0;
+  --background-color-btn: #011627;
+  --label-color: #ffffff; }
+
+.btn_container {
+  position: fixed;
+  width: var(--width-btn-container);
+  height: var(--height-btn-container);
+  left: var(--left-position);
+  top: var(--top-position);
+  right: var(--right-position);
+  bottom: var(--bottom-position); }
+  .btn_container:hover {
+    cursor: pointer; }
+.btn_background {
+  border-radius: 2px;
+  background-color: var(--background-color-btn);
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  z-index: 1;
+  transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(var(--rotateY)); }
+.btn_label {
+  color: var(--label-color);
+  position: absolute;
+  top: var(--label-top-position);
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  padding: var(--padding-btn-label) 0;
+  transform: rotate(var(--rotate-label));
+  font-family: "OpenSans", "ABeeZee", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase; }
+
+#full-stars-example-two {
+  /* use display:inline-flex to prevent whitespace issues. alternatively, you can put all the children of .rating-group on a single line */
+  /* make hover effect work properly in IE */
+  /* hide radio inputs */
+  /* hide 'none' input from screenreaders */
+  /* set icon padding and size */
+  /* set default star color */
+  /* if any input is checked, make its following siblings grey */
+  /* make all stars orange on rating group hover */
+  /* make hovered input's following siblings grey on hover */ }
+  #full-stars-example-two .rating-group {
+    display: inline-flex; }
+  #full-stars-example-two .rating__icon {
+    pointer-events: none;
+    width: 24px;
+    height: 24px; }
+  #full-stars-example-two .rating__input {
+    position: absolute !important;
+    left: -9999px !important; }
+  #full-stars-example-two .rating__input--none {
+    display: none; }
+  #full-stars-example-two .rating__label {
+    cursor: pointer;
+    padding: 0 0.1em;
+    font-size: 2rem; }
+  #full-stars-example-two .rating__icon--star {
+    fill: orange; }
+  #full-stars-example-two .rating__input:checked ~ .rating__label .rating__icon--star {
+    fill: #ddd; }
+  #full-stars-example-two .rating-group:hover .rating__label .rating__icon--star {
+    fill: orange; }
+  #full-stars-example-two .rating__input:hover ~ .rating__label .rating__icon--star {
+    fill: #ddd; }

@@ -1,0 +1,154 @@
+
+.u-no-padding {
+  padding: 0 !important;
+}
+
+.u-no-margin {
+  margin: 0 !important;
+}
+
+.u-relative {
+  position: relative;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*doc
+---
+title: Afficher/Masquer
+name: textShow
+category: Utilities
+---
+
+La classe `.is-show-block` permet d'afficher un élément en mode block.
+
+La classe `.is-show` permet d'afficher un élément en mode inline-block;
+
+La classe `.is-hide` permet de masquer un élément.
+
+*/
+
+.is-not-alpha {
+  display: none !important;
+}
+
+.is-show-block {
+  display: block !important;
+}
+
+.is-show {
+  display: inline-block !important;
+}
+
+.is-hide {
+  display: none !important;
+}
+
+.is-column {
+  flex-direction: column;
+}
+
+.u-overflow {
+  &--hidden {
+    overflow: hidden !important;
+  }
+
+  &--auto {
+    overflow: auto !important;
+  }
+}
+
+.u-float-right {
+  float: right;
+}
+
+.u-float-left {
+  float: left;
+}
+
+.is-hidden-medium {
+
+  @include media('>iphone6','<ipad') {
+    display: none !important;
+  }
+}
+
+.is-hidden-large {
+
+  @include media('>iphone6','<large') {
+    display: none !important;
+  }
+}
+
+.u-has-line {
+
+  &--both {
+
+    &::after,
+    &::before {
+      display: inline-block;
+      flex: 1;
+      vertical-align: middle;
+      background-color: color($color-light, 'border');
+      min-width: 20px;
+      height: 1px;
+      content: '';
+    }
+
+    &::after {
+      margin-left: 0;
+    }
+
+    &::before {
+      margin-right: 0;
+    }
+  }
+
+  &--right {
+
+    &::after {
+      display: inline-block;
+      flex: 1;
+      vertical-align: middle;
+      margin-left: spacing('md');
+      background-color: #ECECEC;
+      min-width: 20px;
+      height: 1px;
+      content: '';
+    }
+  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.u-border {
+  &--top {
+    border-top: 1px solid color($color-light, 'border');
+  }
+
+  &--bottom {
+    border-bottom: 1px solid color($color-light, 'border');
+  }
+}
+
+.sr-only {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@mixin gradient-ux() {
+  background-image: -webkit-linear-gradient(left, #52CDC1 0%, #AB98AD 25%, #F7759D 47%, #FC9791 72%, #F0D37F 100%);
+  background-image: -o-linear-gradient(left, #52CDC1 0%, #AB98AD 25%, #F7759D 47%, #FC9791 72%, #F0D37F 100%);
+  background-image: linear-gradient(to right, #52CDC1 0%, #AB98AD 25%, #F7759D 47%, #FC9791 72%, #F0D37F 100%);
+}
