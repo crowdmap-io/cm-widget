@@ -7,7 +7,7 @@ Using npm :
 
 ```
 $ npm i -g npm
-$ npm i --save cm-widget
+$ npm i --save crowdmap-widget
 ```
 
 
