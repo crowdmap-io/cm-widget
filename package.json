@@ -1,6 +1,6 @@
 {
-  "name": "cm-widget",
-  "version": "1.0.0",
+  "name": "crowdmap-widget",
+  "version": "1.0.1",
   "description": "Widget to collect feedback and send it to Crowdmap.",
   "main": "index.js",
   "repository": "https://github.com/crowdmap-io/cm-widget.git",
@@ -8,14 +8,17 @@
   "license": "MIT",
   "devDependencies": {
     "css-to-js": "0.0.2",
-    "google-closure-compiler": "^20170218.0.0",
-    "grunt": "^1.0.1",
-    "grunt-cli": "^1.2.0",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-cssmin": "^2.0.0",
-    "grunt-css-to-js": "^0.1.9",
-    "load-grunt-tasks": "^3.5.2",
+    "google-closure-compiler": "^20200204.0.0",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-css-to-js": "0.0.2",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-uglify": "^3.0.2",
     "time-grunt": "^1.4.0"
+  },
+  "dependencies": {
+    "html2canvas": "^1.0.0-rc.5"
   }
 }

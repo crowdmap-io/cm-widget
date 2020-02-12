@@ -3,7 +3,15 @@
     apiUrl,
     application,
     containers = {},
-    translatedTemplates;
+    translatedTemplates,
+    divToAppend,
+    divToCapture,
+    spacing,
+    perspective,
+    positionAside,
+    positionX,
+    backgroundColor,
+    html2canvas = window['html2canvas'];
   var trads = {
     en: {
       panelTitle: 'Product feedback',
@@ -358,7 +366,6 @@
   }
 
   function getScreenShot(callback) {
-
     html2canvas(divToCapture).then(function(canvas) {
       base64 = canvas.toDataURL();
       callback(base64);
