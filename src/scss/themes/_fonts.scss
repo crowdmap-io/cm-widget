@@ -1,0 +1,62 @@
+$main-path-font: '../assets/fonts/ABeeZee/';
+$main-name-font: 'ABeeZee';
+$main-fullname-font: 'ABeeZee';
+
+@font-face {
+  font-family: $main-fullname-font;
+  src: url("#{$main-path-font+$main-name-font+ '-Italic.ttf'}") format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: $main-fullname-font;
+  src: url("#{$main-path-font+$main-name-font+ '-Regular.ttf'}") format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+$alternative-path-font: '../assets/fonts/OpenSans/';
+$alternative-name-font: 'OpenSans';
+$alternative-fullname-font: 'OpenSans';
+
+
+@font-face {
+  font-family: $alternative-fullname-font;
+  src: url("#{$alternative-path-font+$alternative-name-font+ '-Bold.ttf'}") format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $alternative-fullname-font;
+  src: url("#{$alternative-path-font+$alternative-name-font+ '-Regular.ttf'}") format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+$corpo-path-font: '../assets/fonts/Josefin_Sans/';
+$corpo-name-font: 'JosefinSans';
+$corpo-fullname-font: 'JosefinSans';
+
+
+@font-face {
+  font-family: $corpo-fullname-font;
+  src: url("#{$corpo-path-font+$corpo-name-font+ '-Regular.ttf'}") format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+$font-family-base: $main-name-font, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica;
+$font-alternative: $alternative-name-font, $main-name-font, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica;
+$font-corpo: $corpo-name-font, $main-name-font, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica;
+$font-weight-base: 500;
+
+$font-size-base: 12px;
+$font-md: $font-size-base;
+$font-xxs: .7em;
+$font-xs: .8em;
+$font-sm: 10.8px;
+$font-lg: 14px;
+$font-xl: 16px;
+$font-xxl: 2em;

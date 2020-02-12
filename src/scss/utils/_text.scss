@@ -1,0 +1,116 @@
+/*doc
+---
+title: Text
+name: text
+category: Utilities
+---
+
+```html_example
+<p class="u-font--light">Texte light</p>
+<p class="u-font--normal">Texte normal</p>
+<p class="u-font--bold">Texte en gras</p>
+<p class="u-font--uppercase">Texte majuscule</p>
+<p class="u-truncate-text">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur at atque illo numquam perspiciatis possimus sequi soluta tempore voluptatem! Aliquam debitis dolores, doloribus excepturi harum officia pariatur totam veritatis?
+</p>
+```
+
+```html_example
+<p class="u-font--xs">Texte extra small</p>
+<p class="u-font--sm">Texte small</p>
+<p class="u-font--md">Texte normal</p>
+<p class="u-font--lg">Texte large</p>
+<p class="u-font--xl">Texte extra large</p>
+```
+
+*/
+
+.u-color {
+  &--primary {
+    color: $colorPrimary;
+    &-light {
+      color: color($color-light, 'disable');
+    }
+  }
+
+  &--highlight {
+    color: color($color-highlight, 'primary');
+    &-light {
+      color: fade-out(color($color-highlight, 'primary'), .5);
+    }
+  }
+
+  &--success {
+    color: color($color-success, 'primary');
+  }
+}
+
+.u-font {
+  &--light {
+    font-weight: 300;
+  }
+
+  &--normal {
+    font-weight: 500;
+  }
+
+  &--bold {
+    font-weight: 700;
+  }
+
+  &--uppercase {
+    text-transform: uppercase !important;
+  }
+
+  &--xs {
+    font-size: $font-xs !important;
+  }
+
+  &--sm {
+    font-size: $font-sm !important;
+  }
+
+  &--md {
+    font-size: $font-md !important;
+  }
+
+  &--lg {
+    font-size: $font-lg !important;
+  }
+
+  &--xl {
+    font-size: $font-xl !important;
+  }
+}
+
+.u-truncate-text {
+  width: 100%;
+
+  @util truncate;
+}
+
+/*doc
+---
+title: Text Alignment
+name: textAlignment
+category: Utilities
+---
+
+```html_example
+<div class="u-text-left">Text aligné gauche</div>
+<div class="u-text-right">Text aligné droite</div>
+```
+
+*/
+
+.u-text-left {
+  text-align: left !important;
+}
+
+.u-text-right {
+  text-align: right !important;
+}
+
+.u-text-center {
+  text-align: center !important;
+}

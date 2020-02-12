@@ -1,0 +1,59 @@
+
+/*doc
+---
+title: Z-Index
+name: zIndex
+category: Helpers
+---
+
+Ce helper permet de récupérer le z-index correspondant à un composant. La gestion des z-index est donc facilitée
+puisqu'elle est centralisée dans un tableau.
+
+
+<div class="codeBlock">
+<div class="highlight">
+<pre>
+z-index:z('modal');
+</pre>
+</div>
+</div>
+
+
+Z Index disponible :
+
+z-index           | Value
+----------------  | -----------------
+modal             | 5000
+dropdown          | 4000
+navbar            | 3
+default           | 1
+below             | -1
+
+*/
+
+/// Z-indexes map, gathering all Z layers of the application
+/// @access private
+/// @type Map
+/// @prop {String} key - Layer's name
+/// @prop {Number} value - Z value mapped to the key
+$z-indexes: (
+  'modal': 5000,
+  'topbar' : 4500,
+  'dropdown': 4000,
+  'tooltip': 4000,
+  'badge': 5,
+  'navbar': 3,
+  'default': 1,
+  'below': -1,
+);
+
+/// Get a z-index value from a layer name
+/// @access public
+/// @param {String} $layer - Layer’s name
+/// @return {Number}
+/// @require $z-indexes
+
+@function z($layer) {
+
+  @return map-get($z-indexes, $layer);
+}

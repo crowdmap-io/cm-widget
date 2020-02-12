@@ -1,0 +1,151 @@
+/*doc
+---
+title: Couleur
+name: hColor
+category: Helpers
+---
+
+Utilisation du helper pour insérer une couleur sur un élément.
+
+<div class="codeBlock">
+  <div class="highlight">
+    <pre>
+      color:color($color-dark,'00');
+    </pre>
+  </div>
+</div>
+
+*/
+
+/// Get a color value from a color map
+/// @access public
+/// @param {String} $style - normal / dark / light
+/// @param {String} $map-color - $color-primary / $color-secondary / $color-grey / $color-hightlight / $color-light /
+/// @return {Number}
+/// @require $map-color
+
+@function color($map-color,$style ) {
+
+  @return map-get($map-color, $style);
+}
+
+/// Get a spacing value from the spacing map
+/// @access public
+/// @param {String} $style - xs / sm / md / lg / xl
+/// @return {Number}
+/// @require $style
+
+@function spacing($style) {
+
+  @return map-get($spacing, $style);
+}
+
+/// Add px to a value
+/// @access public
+/// @param {String} $value
+/// @return {Number}
+/// @require $value
+
+@function add-px($value) {
+
+  @return #{$value + 'px'};
+}
+
+/*doc
+---
+title: When inside
+name: whenInside
+category: Helpers
+---
+
+Le helper when-inside permet de définir un style pour élément lorsqu'il se trouve dans une autre classe.
+
+<div class="codeBlock">
+<div class="highlight">
+<pre>
+.paragraph {
+    font-size:12px;
+}
+
+@include when-inside('.navbar') {
+    .paragraph {
+        font-size:10px;
+    }
+}
+</pre>
+</div>
+</div>
+
+
+*/
+
+/// Helper mixin to provide simple API to selector nesting
+/// @param {String} $selector - Selectorfd
+
+@mixin when-inside($selector) {
+  #{$selector} & {
+
+    @content;
+  }
+}
+
+@mixin box-shadow() {
+  box-shadow: rgba(121, 121, 121, .5) 0 0 4px 0;
+}
+
+@mixin ats-transition($value : all .2s ease-in-out) {
+  transition: $value;
+}
+
+@mixin ats-shadow($value: 0 2px 8px 0 rgba(187, 187, 187, .5)) {
+  box-shadow: 0 2px 8px 0 rgba(187, 187, 187, .5);
+}
+
+@mixin placeholder {
+  $placeholders: ':-webkit-input' ':-moz' '-moz' '-ms-input';
+
+  @each $placeholder in $placeholders {
+    &:#{$placeholder}-placeholder {
+
+      @content;
+    }
+  }
+}
+
+@mixin no-touch-events {
+
+  @include when-inside('.touchevents') {
+    visibility: visible;
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+@mixin font-smoothing($value: on) {
+    @if $value == on {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+@mixin atux-transition($value : all .2s ease-in-out) {
+  transition: $value;
+}
+
+@mixin input-hover() {
+  outline: 0;
+  box-shadow: 0 0 0 3px fade-out(color($color-light, 'light'), .9);
+  border-color: color($color-light, 'light');
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+@mixin input-focus() {
+  outline: 0;
+  box-shadow: 0 0 0 3px fade-out(color($color-highlight, 'primary'), .9);
+  border-color: color($color-highlight, 'primary');
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}

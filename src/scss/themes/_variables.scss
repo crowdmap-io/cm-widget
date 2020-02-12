@@ -1,0 +1,73 @@
+$space-base: 8;
+$space-step: 8;
+
+$space-xs: 2;
+$space-sm: 4;
+$space-md: $space-base;
+$space-lg: $space-base + $space-step;
+$space-xl: #{$space-base + 2 * $space-step};
+$space-xxl: #{$space-base + 3 * $space-step};
+
+$right-space-vars: ($space-xs right r xs, $space-sm right r sm,$space-md right r md, $space-lg right r lg, $space-xl right r xl);
+$bottom-space-vars: ($space-xs bottom b xs, $space-sm bottom b sm,$space-md bottom b md, $space-lg bottom b lg, $space-xl bottom b xl);
+$top-space-vars: ($space-xs top t xs, $space-sm top t sm,$space-md top t md, $space-lg top t lg, $space-xl top t xl);
+$left-space-vars : ($space-xs left l xs, $space-sm left l sm,$space-md left l md, $space-lg left l lg, $space-xl left l xl);
+
+$colorLight: #ffffff;
+
+$colorPrimary: #072236;
+
+$colorHighlight : #22ADF5;
+$colorDanger : #F1404B;
+$colorSuccess : #10CFBD;
+
+$color-border: (
+  'primary' : #EFEFEF
+);
+
+$color-dark: (
+  'primary' : $colorPrimary
+);
+
+$color-light: (
+  'primary': $colorLight,
+  'hover-element': #F9F9F9,
+  'light': #A5A4A1,
+  'disable': #D8D8D8,
+  'border': #e9e9e9
+);
+
+$color-blue: (
+  'primary' : #36558F
+);
+
+
+$color-highlight: (
+  'primary': $colorHighlight
+);
+
+$color-danger: (
+  'primary': $colorDanger
+);
+
+$color-success: (
+  'primary': $colorSuccess
+);
+
+$spacing: (
+  'xs' : add-px($space-xs),
+  'sm' : add-px($space-sm),
+  'md' : add-px($space-md),
+  'lg' : add-px($space-lg),
+  'xl' : add-px($space-xl),
+  'xxl' : add-px($space-xxl)
+);
+
+$height-bar-xlarge: 80px;
+$height-bar-large: 60px;
+$height-bar-medium: 50px;
+$height-bar-small: 45px;
+$height-bar-xsmall: 32px;
+$height-bar-xxsmall: 24px;
+
+$aside-width: 270px;

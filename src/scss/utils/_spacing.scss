@@ -1,0 +1,108 @@
+/*doc
+---
+title: Margin
+name: margin
+category: Utilities
+---
+
+Structure : m*position*-*size*
+
+Position :
+t (top)
+b (bottom)
+r (right)
+l (left)
+
+Size :
+xs
+sm
+md
+lg
+
+```html_example
+<div class="mt-lg">Texte bold</div>
+<div class="mb-lg ml-lg">Texte normal</div>
+
+```
+
+*/
+
+/*doc
+---
+title: Padding
+name: padding
+category: Utilities
+---
+
+Structure : p*position*-*size*
+
+Position :
+t (top)
+b (bottom)
+r (right)
+l (left)
+
+Size :
+xs
+sm
+md
+lg
+
+```html_example
+<div class="pb-lg">Texte bold</div>
+<div class="pb-lg pl-lg">Texte normal</div>
+```
+
+*/
+
+
+@mixin generate-spacing-classes(
+  $default-space-amounts-with-direction: ($space-xs left l xs, $space-sm left l sm,$space-md left l md, $space-lg left l lg, $space-xl left l xl)
+) {
+
+  @each $space in $default-space-amounts-with-direction {
+    .m#{nth($space, 3)}-#{nth($space, 4)} {
+      margin-#{nth($space, 2)}: #{nth($space, 1)}px !important;
+    }
+
+    .p#{nth($space, 3)}-#{nth($space, 4)} {
+      padding-#{nth($space, 2)}: #{nth($space, 1)}px !important;
+    }
+  }
+}
+
+@include generate-spacing-classes($left-space-vars); // left comes by default
+
+@include generate-spacing-classes($right-space-vars);
+
+@include generate-spacing-classes($bottom-space-vars);
+
+@include generate-spacing-classes($top-space-vars);
+
+.p-lg {
+  padding: spacing('lg') !important;
+}
+
+.p-md {
+  padding: spacing('md') !important;
+}
+
+.p-sm {
+  padding: spacing('sm') !important;
+}
+
+.p-xs {
+  padding: spacing('xs') !important;
+}
+
+.mt-auto {
+  margin-top: auto !important;
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+}
