@@ -1,45 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!--<script src="src/html2canvas.min.js"></script>
-    <script src="src/indy.js"></script>
-    <link rel="stylesheet" href="src/indy.css" />-->
     <script src="dist/cm-widget.min.js"></script>
-  </head>
-  <body>
-    <h1>Hello</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptatem
-      suscipit, pariatur placeat itaque eius error sequi quam beatae corporis
-      provident cupiditate velit ducimus blanditiis veritatis, numquam fugiat
-      tempore sed.
-    </p>
+    
+</head>
+<body>
+  <h1>Hello</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptatem suscipit, pariatur placeat itaque eius error sequi quam beatae corporis provident cupiditate velit ducimus blanditiis veritatis, numquam fugiat tempore sed.</p>
+    
+  <h2>Hello 2</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente pariatur minus adipisci, nihil totam, quaerat tenetur iusto blanditiis aut saepe cum, asperiores obcaecati. Illum ratione esse eius laudantium adipisci minima.</p>
+  <script>
 
-    <h2>Hello 2</h2>
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
-      pariatur minus adipisci, nihil totam, quaerat tenetur iusto blanditiis aut
-      saepe cum, asperiores obcaecati. Illum ratione esse eius laudantium
-      adipisci minima.
-    </p>
-    <script>
-      cmWidget.init({
-        tags: ["website", "features"],
-        email: "erwan@crowdmap.io",
-        team: "demo-wiym",
-        language: "en",
-        theme: "dark",
-        positionAside: true
-      });
+    cmWidget.init(
+              {
+                tags  : ['userinsight', 'explorer'],
+                email : 'erwan.lumbroso@atinternet.com',
+                team  : 'demo-wiym',
+                language:'en',
+                theme: 'dark',
+                positionAside: true
+              });
+          </script>
+</body>
 
-      setTimeout(function() {
-        cmWidget.removeTag("website");
-        cmWidget.showWidget();
-        cmWidget.setEmail("flo@samboat.fr");
-      }, 3000);
-    </script>
-  </body>
 </html>
